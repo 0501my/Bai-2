@@ -12,7 +12,7 @@ let choice = -1
 function main() {
     do {
         showMenu()
-        choice = +input.question('lua chon cua ban')
+        choice = +input.question('lua chon cua ban : ')
 
         switch (choice) {
             case 1 :
@@ -36,7 +36,7 @@ function showMenu() {
     let menu = `
     1. Quan ly Sach
     2. Quan ly Tap Chi
-    3.Quan ly Bao
+    3. Quan ly Bao
     0. Thoat chuong trinh`
     console.log(menu)
 }
@@ -45,7 +45,7 @@ function showMenu() {
 function manageBook() {
     do {
         showMenuBook()
-        choice = +input.question(`nhap lua chon cua ban`)
+        choice = +input.question(`nhap lua chon cua ban : `)
         switch (choice) {
             case 1:
                 addBook();
@@ -102,7 +102,7 @@ function deleteBook() {
 function manageMagazine() {
     do {
         showMenuMagazine()
-        choice = +input.question(`nhap lua chon cua ban`)
+        choice = +input.question(`nhap lua chon cua ban :  `)
         switch (choice) {
             case 1:
                 addMagazine();
@@ -122,7 +122,7 @@ function manageMagazine() {
 function showMenuMagazine() {
     let menu = `
     1. Them tap chi
-    2. Hien thi danh sach Tapp chi
+    2. Hien thi danh sach Tap chi
     3. Xoa Tap chi
     4. Tim Tap chi
     0. Thoat`
@@ -130,8 +130,8 @@ function showMenuMagazine() {
 }
 
 function addMagazine() {
-    let code = +input.question("Ma tai lieu: ")
-    let imprint = input.question(`ten nha san xuat: `)
+    let code = +input.question("Ma tai lieu : ")
+    let imprint = input.question(`ten nha san xuat : `)
     let numberIssue = input.question(`so ban phat hanh : `)
     let releaseNumber = input.question(`so phat  hanh : `)
     let releaseMonth = input.question(`Thang phat hanh : `)
@@ -140,13 +140,13 @@ function addMagazine() {
 }
 
 function displayMagazine() {
-    console.log(`------Sau khi them-----`)
-    console.table(BookManage.displayBook())
+    console.log(`------Sau khi them tap chi-----`)
+    console.table(MagazineManage.displayMagazine())
 }
 
 function findMagazine() {
-    console.log(`------Sau khi tim-----`)
-    let fullName = input.question(`nhap ten: `)
+    console.log(`------Sau khi tim tap chi -----`)
+    let fullName = input.question(`nhap ten : `)
     console.log(MagazineManage.findMagazine(fullName))
 }
 
@@ -159,7 +159,7 @@ function deleteMagazine() {
 function manageNewPapPer() {
     do {
         showMenuNewPapPer()
-        choice = +input.question(`nhap lua chon cua ban`)
+        choice = +input.question(`nhap lua chon cua ban : `)
         switch (choice) {
             case 1:
                 addNewPapPer();
@@ -187,8 +187,8 @@ function showMenuNewPapPer() {
 }
 
 function addNewPapPer() {
-    let code = +input.question("Ma tai lieu: ")
-    let imprint = input.question(`ten nha san xuat: `)
+    let code = +input.question("Ma tai lieu : ")
+    let imprint = input.question(`ten nha san xuat  : `)
     let numberIssue = input.question(`so ban phat hanh : `)
     let releaseDate = input.question(`Ngay phat hanh : `)
     let newPapPer = new NewPapPer(code, imprint, numberIssue, releaseDate)
@@ -196,14 +196,14 @@ function addNewPapPer() {
 }
 
 function displayNewPapPer() {
-    console.log(`------Sau khi them-----`)
-    console.table(BookManage.displayBook())
+    console.log(`------Sau khi them bao-----`)
+    console.table(NewPapPerManage.displayNewPapPer())
 }
 
 function findNewPapPer() {
-    console.log(`------Sau khi tim-----`)
-    let fullName = input.question(`nhap ten: `)
-    console.log(BookManage.findBook(fullName))
+    console.log(`------Sau khi tim bao-----`)
+    let fullName = input.question(`nhap ten : `)
+    console.log(NewPapPerManage.findNewPapPer(fullName))
 }
 
 function deleteNewPapPer() {

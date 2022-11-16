@@ -14,7 +14,7 @@ export class NewPapPerManage {
 
     static findNewPapPer(code: number) {
         for (let i = 0; i < this.listNewPapPer.length; i++) {
-            if (this.listNewPapPer[i].Code === code) {
+            if (this.listNewPapPer[i].Code === +code) {
                 return this.listNewPapPer[i]
             }
         }

@@ -13,7 +13,7 @@ export class MagazineManage {
 
     static findMagazine(code: number) {
         for (let i = 0; i < this.listMagazine.length; i++) {
-            if (this.listMagazine[i].Code === code) {
+            if (this.listMagazine[i].Code === +code) {
                 return this.listMagazine[i]
             }
         }
